@@ -15,7 +15,7 @@ function Header() {
         <NavLink end to="/">
           Homepage
         </NavLink>
-        <NavLink to="/profile/123?age=12">Profile</NavLink>
+        <NavLink to="/profile">Profile</NavLink>
       </ul>
     </header>
   );

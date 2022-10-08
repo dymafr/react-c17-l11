@@ -1,10 +1,12 @@
-export async function homepageLoader() {
-  const response = await fetch('https://restapi.fr/api/recipes');
-  if (response.ok) {
-    return new Promise((res) => {
-      setTimeout(() => res(response.json()), 1000);
-    });
+import { redirect } from 'react-router-dom';
+import { isLoggedin } from '../apis/auth';
+import { getRecipes } from '../apis/recipes';
+
+export async function profileLoader({ params, request }) {
+  if (await isLoggedin()) {
+    const recipes = await getRecipes();
+    return recipes;
   } else {
-    throw new Error('Oups !');
+    return redirect('/');
   }
 }

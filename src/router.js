@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: '/profile/:id',
+        path: '/profile',
         element: <Profile />,
         loader: profileLoader,
         caseSensitive: true,
@@ -35,10 +35,6 @@ export const router = createBrowserRouter([
             element: <ProfileData />,
           },
         ],
-      },
-      {
-        path: '/profile/*',
-        element: <Profile />,
       },
     ],
   },
